@@ -1,0 +1,14 @@
+[Unit]
+    Description=Authentication proxy with TOTP
+    StartLimitIntervalSec=0
+
+[Install]
+    WantedBy=nginx
+
+[Service]
+    Type=simple
+    WorkingDirectory=/opt/basic-totp
+    ExecStart=/opt/basic-totp/run.sh
+    Restart=always
+    RestartSec=3s
+
