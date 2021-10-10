@@ -2,7 +2,8 @@
 
 ## Credits
 
-
+Credits due to https://github.com/newhouseb/simpleotp. This project is 
+a ripo... I mean modernized version of that.
 
 ## Scope
 
