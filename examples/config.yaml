@@ -2,7 +2,7 @@ app:
   port: 8000
   cookie_secret: PLEASE_CHANGE_THIS
   token_lifetime: 86400
-  after_login_redirect: /test
+  after_login_redirect: /
 auth:
   policy:
     pass_unkown: false
