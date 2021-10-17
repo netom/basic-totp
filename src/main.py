@@ -14,31 +14,6 @@ COOKIE_SECRET = 'nMNuRnvTczi2TU4jWZKfzTUzF'
 
 SECRET = open('.totp_secret').read().strip()
 
-FORM = """
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Please Log In</title>
-<style type="text/css">
-label {
-    display: inline-block;
-    width: 90px;
-}
-</style>
-</head>
-<body>
-<h1>Protected Area</h1>
-<form action="/auth/login" method="POST">
-<p><label for="username">Username:</label><input type="text" name="username"></p>
-<p><label for="password">Password:</label><input type="password" name="password"></p>
-<p><label for="totp">Token:</label><input type="text" name="totp"></p>
-<p><input type="submit" value="Log in"></p>
-</form>
-</body>
-</html>
-"""
-
 class Token:
     def __init__(self, username, password) -> None:
         self.key = '%064x' % random.getrandbits(8*32)
@@ -71,7 +46,7 @@ def get_auth_check():
 
 @get('/auth/login')
 def get_auth_login():
-    return FORM
+    return template('src/templates/login.tpl')
 
 @get('/auth/logout')
 def get_auth_logout():
