@@ -1,2 +1,3 @@
 .totp_secret
+/config.yaml
 venv
